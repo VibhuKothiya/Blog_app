@@ -9,13 +9,13 @@ const createPost = async (req, res) => {
             throw new Error("post not found !");
         }
 
-        res.status(200).json({
+        res.status(201).json({
             success: true,
             message: "post created successfully!",
             data: post,
         });
     } catch (error) {
-        res.status(400).json({
+        res.status(500).json({
             success: false,
             message: error.message,
         });
